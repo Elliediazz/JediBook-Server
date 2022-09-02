@@ -13,15 +13,15 @@ const AvatarSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    hair_color: {
+    hairColor: {
         type: String,
         requried: false
     },
-    eye_color: {
+    eyeColor: {
         type: String,
         required: true
     },
-    birth_year: {
+    birthYear: {
         type: Number,
         required: true
     },
