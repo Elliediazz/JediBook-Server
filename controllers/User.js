@@ -1,14 +1,6 @@
 const User = require("../models/User");
 const bcrypt = require('bcrypt')
 
-
-
-
-
-
-
-
-
 // //Signup function
 // async function signUp(req, res) {
 //     const body = req.body;
