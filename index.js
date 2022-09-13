@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 require('dotenv').config()
 
 //Bringing in the routes
@@ -15,6 +16,7 @@ app.get('/', (req, res) => {
 
 // Middleware
 app.use(express.json()); //parses incoming JSON request and puts the parsed data in req.body
+app.use(cors())
 
 // Routes
 app.use("/user", userRoutes); // we want express to use userRoutes for all requests coming at /auth/xxx, like /auth/login

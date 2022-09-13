@@ -4,19 +4,19 @@ const AvatarSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        // unique: true
+        unique: true
     },
     height: {
         type: Number,
-        required: true
+        required: false
     },
     mass: {
-        type: String,
-        required: true
+        type: Number,
+        required: false
     },
     hairColor: {
         type: String,
-        requried: false
+        requried: true
     },
     eyeColor: {
         type: String,
@@ -28,11 +28,11 @@ const AvatarSchema = new mongoose.Schema({
     },
     gender: {
         type: String,
-        required: true
+        required: false
     },
     homeworld: {
         type: String,
-        requried: false
+        requried: true
     },
     species: {
         type: String,

@@ -34,7 +34,7 @@ async function createAvatar(req, res) {
         
     } catch (error) {
         console.log(error)
-        res.status(500).json({ 'message': 'error creating Avatar' })
+        res.status(500).json({'message': 'error creating Avatar' })
     }
 }
 
