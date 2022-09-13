@@ -1,5 +1,6 @@
 const Avatar = require('../models/Avatar')
 
+//get all avatars a user creates
 async function getAllAvatars(req, res) {
     try {
         const avatars = await Avatar.find()
@@ -10,6 +11,7 @@ async function getAllAvatars(req, res) {
     }
 }
 
+//get a specific avatar by id
 async function getAvatarById(req, res) {
     try {
         const { id } = req.params
@@ -21,6 +23,7 @@ async function getAvatarById(req, res) {
     }
 }
 
+//create an avatar
 async function createAvatar(req, res) {
     try {
        await new Avatar({
@@ -35,6 +38,7 @@ async function createAvatar(req, res) {
     }
 }
 
+//delete an avatar a user created
 async function deleteAvatarById(req, res) {
     try {
         const { id } = req.params
@@ -50,9 +54,9 @@ async function deleteAvatarById(req, res) {
 async function getEdit(req, res){
     try {
         const { id } = req.params
-        const quiz = await Quiz.findBy(id)
-        res.render('editQuiz', {
-             quiz
+        const avatars = await Avatar.findBy(id)
+        res.render('editAvatar', {
+             avatar
         })
     } catch (error) {
         console.log(error)
@@ -60,11 +64,11 @@ async function getEdit(req, res){
     }
 }
 
-//Update Avatar
+//Update/edit an Avatar
 async function updateAvatar(req, res){
     try {
         const { id } = req.params
-        const avatars = await Quiz.findByIdAndUpdate(id, req.body)
+        const avatars = await Avatar.findByIdAndUpdate(id, req.body)
         res.redirect(`/avatar/${id}`)
     } catch (error) {
         console.log(error)
